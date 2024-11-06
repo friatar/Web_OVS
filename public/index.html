@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+</head>
+<style>
+    * {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: #f0f2f5;
+        color: #333;
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        margin-bottom: 16px;
+        color: #007bff;
+        text-align: center;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    form, .custom-radio-group {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto 20px;
+    }
+
+    .input {
+        width: calc(100% - 24px);
+        margin-bottom: 12px;
+        padding: 10px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        color: #333;
+        transition: border-color 0.3s;
+        background-color: #f9f9f9;
+    }
+
+    .input:focus {
+        border-color: #007bff;
+        background-color: #fff;
+    }
+
+    button {
+        display: inline-block;
+        font-size: 1rem;
+        padding: 10px 16px;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+    }
+
+    .Register, .Submit, .Result {
+        background-color: #007bff;
+        color: white;
+        width: 100%;
+        max-width: 200px;
+        margin: 10px auto;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    button:active {
+        background-color: #004080;
+        transform: scale(1);
+    }
+
+    .custom-radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        border-radius: 8px;
+    }
+
+    .custom-radio-container {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        background-color: #f9f9f9;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .custom-radio-container:hover {
+        background-color: #007bff;
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .custom-radio-container input[type="radio"] {
+        display: none;
+    }
+
+    .custom-radio-checkmark {
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        border: 2px solid #007bff;
+        margin-right: 12px;
+        background-color: white;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .custom-radio-container input[type="radio"]:checked + .custom-radio-checkmark {
+        background-color: #007bff;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    }
+
+    .custom-radio-checkmark::after {
+        content: "";
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: white;
+    }
+
+    #results {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        max-width: 500px;
+        text-align: center;
+        color: #333;
+    }
+
+    #viewResultsBtn {
+        display: block;
+        margin: 20px auto;
+        width: 150px;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    #viewResultsBtn:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+
+    #viewResultsBtn:active {
+        background-color: #1e7e34;
+    }
+
+</style>
+<body>
+<h2>Voter Registration</h2>
+<form id="registrationForm">
+    <label for="name"></label><input type="text" id="name" class="input" placeholder="Your Name" required><br>
+    <label for="age"></label><input type="number" id="age" class="input" placeholder="Your Age" required><br>
+    <button type="submit" class="Register">Register</button>
+</form>
+
+<h2>Select a Candidate</h2>
+<div class="custom-radio-group">
+    <label class="custom-radio-container">
+        <input type="radio" name="candidate" value="Candidate 1" />
+        <span class="custom-radio-checkmark"></span>
+        Candidate 1
+    </label>
+    <label class="custom-radio-container">
+        <input type="radio" name="candidate" value="Candidate 2" />
+        <span class="custom-radio-checkmark"></span>
+        Candidate 2
+    </label>
+    <label class="custom-radio-container">
+        <input type="radio" name="candidate" value="Candidate 3" />
+        <span class="custom-radio-checkmark"></span>
+        Candidate 3
+    </label>
+    <button class="Submit" id="voteButton" disabled>Vote</button> <!-- Button disabled initially -->
+</div>
+
+<h2>View Voting Results</h2>
+<button id="viewResultsBtn">View Results</button>
+<div id="results">
+    <!-- Voting results will be displayed here -->
+</div>
+
+<script>
+    let voterName = '';
+
+    // Registration
+    document.getElementById('registrationForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        voterName = document.getElementById('name').value;
+        const age = document.getElementById('age').value;
+
+        fetch('/register', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: voterName, age })
+        })
+            .then(response => response.text())
+            .then(message => {
+                alert(message);
+
+                if (message === 'Registration successful!') {
+                    document.getElementById('voteButton').disabled = false;
+                }
+            })
+            .catch(err => console.error('Error:', err));
+    });
+
+    // Vote casting
+    document.getElementById('voteButton').addEventListener('click', () => {
+        const candidate = document.querySelector('input[name="candidate"]:checked').value;
+
+        if (!voterName) {
+            alert("Please register first.");
+            return;
+        }
+
+        fetch('/vote', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ candidate, name: voterName })
+        })
+            .then(response => response.text())
+            .then(message => {
+                alert(message);
+                console.log('Vote response:', message);
+            })
+            .catch(err => console.error('Error:', err));
+    });
+
+    // View results
+    document.getElementById('viewResultsBtn').addEventListener('click', () => {
+        fetch('/results')
+            .then(response => response.json())
+            .then(results => {
+                let resultText = '';
+                for (let candidate in results) {
+                    resultText += `${candidate}: ${results[candidate]} votes<br>`;
+                }
+                document.getElementById('results').innerHTML = resultText;
+            })
+            .catch(err => console.error('Error fetching results:', err));
+    });
+</script>
+</body>
+</html>

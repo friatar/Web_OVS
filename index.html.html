@@ -1,0 +1,294 @@
+<html>
+<head>
+<title>index.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #afb9c3;}
+.s1 { color: #ffc86e;}
+.s2 { color: #ff9696;}
+.s3 { color: #96be78;}
+.s4 { color: #17bbdd;}
+.s5 { color: #61afe1;}
+.s6 { color: #808080;}
+.s7 { color: #c88cdc;}
+</style>
+</head>
+<body bgcolor="#1a2426">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+index.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s1">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">html </span><span class="s1">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">head</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">meta </span><span class="s1">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">meta </span><span class="s1">name</span><span class="s3">=&quot;viewport&quot; </span><span class="s1">content</span><span class="s3">=&quot;width=device-width, initial-scale=1.0&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">title</span><span class="s0">&gt;Online Voting System&lt;/</span><span class="s2">title</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/</span><span class="s2">head</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">style</span><span class="s0">&gt;</span>
+    <span class="s2">* </span><span class="s0">{</span>
+        <span class="s1">font-family</span><span class="s0">: </span><span class="s3">'Segoe UI'</span><span class="s0">, </span><span class="s2">Tahoma</span><span class="s0">, </span><span class="s2">Geneva</span><span class="s0">, </span><span class="s2">Verdana</span><span class="s0">, sans-serif;</span>
+        <span class="s1">margin</span><span class="s0">: </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s1">padding</span><span class="s0">: </span><span class="s3">0</span><span class="s0">;</span>
+        <span class="s1">box-sizing</span><span class="s0">: border-box;</span>
+    <span class="s0">}</span>
+
+    <span class="s2">body </span><span class="s0">{</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#f0f2f5</span><span class="s0">;</span>
+        <span class="s1">color</span><span class="s0">: </span><span class="s4">#333</span><span class="s0">;</span>
+        <span class="s1">padding</span><span class="s0">: </span><span class="s3">20</span><span class="s0">px;</span>
+    <span class="s0">}</span>
+
+    <span class="s2">h2 </span><span class="s0">{</span>
+        <span class="s1">font-size</span><span class="s0">: </span><span class="s3">1.8</span><span class="s0">rem;</span>
+        <span class="s1">margin-bottom</span><span class="s0">: </span><span class="s3">16</span><span class="s0">px;</span>
+        <span class="s1">color</span><span class="s0">: </span><span class="s4">#007bff</span><span class="s0">;</span>
+        <span class="s1">text-align</span><span class="s0">: center;</span>
+        <span class="s1">text-shadow</span><span class="s0">: </span><span class="s3">0 2</span><span class="s0">px </span><span class="s3">4</span><span class="s0">px </span><span class="s5">rgba</span><span class="s0">(</span><span class="s3">0</span><span class="s0">, </span><span class="s3">0</span><span class="s0">, </span><span class="s3">0</span><span class="s0">, </span><span class="s3">0.1</span><span class="s0">);</span>
+    <span class="s0">}</span>
+
+    <span class="s2">form</span><span class="s0">, .</span><span class="s2">custom-radio-group </span><span class="s0">{</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#fff</span><span class="s0">;</span>
+        <span class="s1">padding</span><span class="s0">: </span><span class="s3">20</span><span class="s0">px;</span>
+        <span class="s1">border-radius</span><span class="s0">: </span><span class="s3">10</span><span class="s0">px;</span>
+        <span class="s1">box-shadow</span><span class="s0">: </span><span class="s3">0 8</span><span class="s0">px </span><span class="s3">16</span><span class="s0">px </span><span class="s5">rgba</span><span class="s0">(</span><span class="s3">0</span><span class="s0">, </span><span class="s3">0</span><span class="s0">, </span><span class="s3">0</span><span class="s0">, </span><span class="s3">0.1</span><span class="s0">);</span>
+        <span class="s1">width</span><span class="s0">: </span><span class="s3">100</span><span class="s0">%;</span>
+        <span class="s1">max-width</span><span class="s0">: </span><span class="s3">500</span><span class="s0">px;</span>
+        <span class="s1">margin</span><span class="s0">: </span><span class="s3">0 </span><span class="s0">auto </span><span class="s3">20</span><span class="s0">px;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">.</span><span class="s2">input </span><span class="s0">{</span>
+        <span class="s1">width</span><span class="s0">: </span><span class="s5">calc</span><span class="s0">(</span><span class="s3">100</span><span class="s0">% - </span><span class="s3">24</span><span class="s0">px);</span>
+        <span class="s1">margin-bottom</span><span class="s0">: </span><span class="s3">12</span><span class="s0">px;</span>
+        <span class="s1">padding</span><span class="s0">: </span><span class="s3">10</span><span class="s0">px;</span>
+        <span class="s1">border-radius</span><span class="s0">: </span><span class="s3">8</span><span class="s0">px;</span>
+        <span class="s1">border</span><span class="s0">: </span><span class="s3">1</span><span class="s0">px solid </span><span class="s4">#ccc</span><span class="s0">;</span>
+        <span class="s1">font-size</span><span class="s0">: </span><span class="s3">1</span><span class="s0">rem;</span>
+        <span class="s1">color</span><span class="s0">: </span><span class="s4">#333</span><span class="s0">;</span>
+        <span class="s1">transition</span><span class="s0">: </span><span class="s2">border-color </span><span class="s3">0.3</span><span class="s0">s;</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#f9f9f9</span><span class="s0">;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">.</span><span class="s2">input</span><span class="s0">:</span><span class="s4">focus </span><span class="s0">{</span>
+        <span class="s1">border-color</span><span class="s0">: </span><span class="s4">#007bff</span><span class="s0">;</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#fff</span><span class="s0">;</span>
+    <span class="s0">}</span>
+
+    <span class="s2">button </span><span class="s0">{</span>
+        <span class="s1">display</span><span class="s0">: inline-block;</span>
+        <span class="s1">font-size</span><span class="s0">: </span><span class="s3">1</span><span class="s0">rem;</span>
+        <span class="s1">padding</span><span class="s0">: </span><span class="s3">10</span><span class="s0">px </span><span class="s3">16</span><span class="s0">px;</span>
+        <span class="s1">border-radius</span><span class="s0">: </span><span class="s3">8</span><span class="s0">px;</span>
+        <span class="s1">border</span><span class="s0">: none;</span>
+        <span class="s1">cursor</span><span class="s0">: pointer;</span>
+        <span class="s1">transition</span><span class="s0">: background-color </span><span class="s3">0.3</span><span class="s0">s, </span><span class="s2">transform </span><span class="s3">0.2</span><span class="s0">s;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">.</span><span class="s2">Register</span><span class="s0">, .</span><span class="s2">Submit</span><span class="s0">, .</span><span class="s2">Result </span><span class="s0">{</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#007bff</span><span class="s0">;</span>
+        <span class="s1">color</span><span class="s0">: white;</span>
+        <span class="s1">width</span><span class="s0">: </span><span class="s3">100</span><span class="s0">%;</span>
+        <span class="s1">max-width</span><span class="s0">: </span><span class="s3">200</span><span class="s0">px;</span>
+        <span class="s1">margin</span><span class="s0">: </span><span class="s3">10</span><span class="s0">px auto;</span>
+        <span class="s1">font-weight</span><span class="s0">: bold;</span>
+    <span class="s0">}</span>
+
+    <span class="s2">button</span><span class="s0">:</span><span class="s4">hover </span><span class="s0">{</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#0056b3</span><span class="s0">;</span>
+        <span class="s1">transform</span><span class="s0">: </span><span class="s5">scale</span><span class="s0">(</span><span class="s3">1.05</span><span class="s0">);</span>
+    <span class="s0">}</span>
+
+    <span class="s2">button</span><span class="s0">:</span><span class="s4">active </span><span class="s0">{</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#004080</span><span class="s0">;</span>
+        <span class="s1">transform</span><span class="s0">: </span><span class="s5">scale</span><span class="s0">(</span><span class="s3">1</span><span class="s0">);</span>
+    <span class="s0">}</span>
+
+    <span class="s0">.</span><span class="s2">custom-radio-group </span><span class="s0">{</span>
+        <span class="s1">display</span><span class="s0">: flex;</span>
+        <span class="s1">flex-direction</span><span class="s0">: column;</span>
+        <span class="s1">gap</span><span class="s0">: </span><span class="s3">12</span><span class="s0">px;</span>
+        <span class="s1">border-radius</span><span class="s0">: </span><span class="s3">8</span><span class="s0">px;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">.</span><span class="s2">custom-radio-container </span><span class="s0">{</span>
+        <span class="s1">display</span><span class="s0">: flex;</span>
+        <span class="s1">align-items</span><span class="s0">: center;</span>
+        <span class="s1">padding</span><span class="s0">: </span><span class="s3">12</span><span class="s0">px;</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#f9f9f9</span><span class="s0">;</span>
+        <span class="s1">border</span><span class="s0">: </span><span class="s3">2</span><span class="s0">px solid </span><span class="s4">#e0e0e0</span><span class="s0">;</span>
+        <span class="s1">border-radius</span><span class="s0">: </span><span class="s3">8</span><span class="s0">px;</span>
+        <span class="s1">cursor</span><span class="s0">: pointer;</span>
+        <span class="s1">transition</span><span class="s0">: background-color </span><span class="s3">0.3</span><span class="s0">s, </span><span class="s2">box-shadow </span><span class="s3">0.3</span><span class="s0">s;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">.</span><span class="s2">custom-radio-container</span><span class="s0">:</span><span class="s4">hover </span><span class="s0">{</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#007bff</span><span class="s0">;</span>
+        <span class="s1">color</span><span class="s0">: white;</span>
+        <span class="s1">box-shadow</span><span class="s0">: </span><span class="s3">0 4</span><span class="s0">px </span><span class="s3">8</span><span class="s0">px </span><span class="s5">rgba</span><span class="s0">(</span><span class="s3">0</span><span class="s0">, </span><span class="s3">0</span><span class="s0">, </span><span class="s3">0</span><span class="s0">, </span><span class="s3">0.2</span><span class="s0">);</span>
+    <span class="s0">}</span>
+
+    <span class="s0">.</span><span class="s2">custom-radio-container input</span><span class="s0">[</span><span class="s2">type</span><span class="s0">=</span><span class="s3">&quot;radio&quot;</span><span class="s0">] {</span>
+        <span class="s1">display</span><span class="s0">: none;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">.</span><span class="s2">custom-radio-checkmark </span><span class="s0">{</span>
+        <span class="s1">height</span><span class="s0">: </span><span class="s3">24</span><span class="s0">px;</span>
+        <span class="s1">width</span><span class="s0">: </span><span class="s3">24</span><span class="s0">px;</span>
+        <span class="s1">border-radius</span><span class="s0">: </span><span class="s3">50</span><span class="s0">%;</span>
+        <span class="s1">border</span><span class="s0">: </span><span class="s3">2</span><span class="s0">px solid </span><span class="s4">#007bff</span><span class="s0">;</span>
+        <span class="s1">margin-right</span><span class="s0">: </span><span class="s3">12</span><span class="s0">px;</span>
+        <span class="s1">background-color</span><span class="s0">: white;</span>
+        <span class="s1">position</span><span class="s0">: relative;</span>
+        <span class="s1">display</span><span class="s0">: flex;</span>
+        <span class="s1">align-items</span><span class="s0">: center;</span>
+        <span class="s1">justify-content</span><span class="s0">: center;</span>
+    <span class="s0">}</span>
+
+    <span class="s0">.</span><span class="s2">custom-radio-container input</span><span class="s0">[</span><span class="s2">type</span><span class="s0">=</span><span class="s3">&quot;radio&quot;</span><span class="s0">]:</span><span class="s4">checked </span><span class="s0">+ .</span><span class="s2">custom-radio-checkmark </span><span class="s0">{</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#007bff</span><span class="s0">;</span>
+        <span class="s1">box-shadow</span><span class="s0">: </span><span class="s3">0 0 10</span><span class="s0">px </span><span class="s5">rgba</span><span class="s0">(</span><span class="s3">0</span><span class="s0">, </span><span class="s3">123</span><span class="s0">, </span><span class="s3">255</span><span class="s0">, </span><span class="s3">0.3</span><span class="s0">);</span>
+    <span class="s0">}</span>
+
+    <span class="s0">.</span><span class="s2">custom-radio-checkmark</span><span class="s0">::</span><span class="s4">after </span><span class="s0">{</span>
+        <span class="s1">content</span><span class="s0">: </span><span class="s3">&quot;&quot;</span><span class="s0">;</span>
+        <span class="s1">display</span><span class="s0">: block;</span>
+        <span class="s1">width</span><span class="s0">: </span><span class="s3">12</span><span class="s0">px;</span>
+        <span class="s1">height</span><span class="s0">: </span><span class="s3">12</span><span class="s0">px;</span>
+        <span class="s1">border-radius</span><span class="s0">: </span><span class="s3">50</span><span class="s0">%;</span>
+        <span class="s1">background-color</span><span class="s0">: white;</span>
+    <span class="s0">}</span>
+
+    <span class="s5">#results </span><span class="s0">{</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#fff</span><span class="s0">;</span>
+        <span class="s1">padding</span><span class="s0">: </span><span class="s3">20</span><span class="s0">px;</span>
+        <span class="s1">border-radius</span><span class="s0">: </span><span class="s3">8</span><span class="s0">px;</span>
+        <span class="s1">box-shadow</span><span class="s0">: </span><span class="s3">0 8</span><span class="s0">px </span><span class="s3">16</span><span class="s0">px </span><span class="s5">rgba</span><span class="s0">(</span><span class="s3">0</span><span class="s0">, </span><span class="s3">0</span><span class="s0">, </span><span class="s3">0</span><span class="s0">, </span><span class="s3">0.1</span><span class="s0">);</span>
+        <span class="s1">margin</span><span class="s0">: </span><span class="s3">20</span><span class="s0">px auto;</span>
+        <span class="s1">max-width</span><span class="s0">: </span><span class="s3">500</span><span class="s0">px;</span>
+        <span class="s1">text-align</span><span class="s0">: center;</span>
+        <span class="s1">color</span><span class="s0">: </span><span class="s4">#333</span><span class="s0">;</span>
+    <span class="s0">}</span>
+
+    <span class="s5">#viewResultsBtn </span><span class="s0">{</span>
+        <span class="s1">display</span><span class="s0">: block;</span>
+        <span class="s1">margin</span><span class="s0">: </span><span class="s3">20</span><span class="s0">px auto;</span>
+        <span class="s1">width</span><span class="s0">: </span><span class="s3">150</span><span class="s0">px;</span>
+        <span class="s1">padding</span><span class="s0">: </span><span class="s3">10</span><span class="s0">px;</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#007bff</span><span class="s0">;</span>
+        <span class="s1">color</span><span class="s0">: white;</span>
+        <span class="s1">border</span><span class="s0">: none;</span>
+        <span class="s1">border-radius</span><span class="s0">: </span><span class="s3">5</span><span class="s0">px;</span>
+        <span class="s1">cursor</span><span class="s0">: pointer;</span>
+        <span class="s1">transition</span><span class="s0">: background-color </span><span class="s3">0.3</span><span class="s0">s ease;</span>
+    <span class="s0">}</span>
+
+    <span class="s5">#viewResultsBtn</span><span class="s0">:</span><span class="s4">hover </span><span class="s0">{</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#218838</span><span class="s0">;</span>
+        <span class="s1">transform</span><span class="s0">: </span><span class="s5">scale</span><span class="s0">(</span><span class="s3">1.05</span><span class="s0">);</span>
+    <span class="s0">}</span>
+
+    <span class="s5">#viewResultsBtn</span><span class="s0">:</span><span class="s4">active </span><span class="s0">{</span>
+        <span class="s1">background-color</span><span class="s0">: </span><span class="s4">#1e7e34</span><span class="s0">;</span>
+    <span class="s0">}</span>
+
+<span class="s0">&lt;/</span><span class="s2">style</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">body</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">h2</span><span class="s0">&gt;Voter Registration&lt;/</span><span class="s2">h2</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">form </span><span class="s1">id</span><span class="s3">=&quot;registrationForm&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">label </span><span class="s1">for</span><span class="s3">=&quot;name&quot;</span><span class="s0">&gt;&lt;/</span><span class="s2">label</span><span class="s0">&gt;&lt;</span><span class="s2">input </span><span class="s1">type</span><span class="s3">=&quot;text&quot; </span><span class="s1">id</span><span class="s3">=&quot;name&quot; </span><span class="s1">class</span><span class="s3">=&quot;input&quot; </span><span class="s1">placeholder</span><span class="s3">=&quot;Your Name&quot; </span><span class="s1">required</span><span class="s0">&gt;&lt;</span><span class="s2">br</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">label </span><span class="s1">for</span><span class="s3">=&quot;age&quot;</span><span class="s0">&gt;&lt;/</span><span class="s2">label</span><span class="s0">&gt;&lt;</span><span class="s2">input </span><span class="s1">type</span><span class="s3">=&quot;number&quot; </span><span class="s1">id</span><span class="s3">=&quot;age&quot; </span><span class="s1">class</span><span class="s3">=&quot;input&quot; </span><span class="s1">placeholder</span><span class="s3">=&quot;Your Age&quot; </span><span class="s1">required</span><span class="s0">&gt;&lt;</span><span class="s2">br</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">button </span><span class="s1">type</span><span class="s3">=&quot;submit&quot; </span><span class="s1">class</span><span class="s3">=&quot;Register&quot;</span><span class="s0">&gt;Register&lt;/</span><span class="s2">button</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/</span><span class="s2">form</span><span class="s0">&gt;</span>
+
+<span class="s0">&lt;</span><span class="s2">h2</span><span class="s0">&gt;Select a Candidate&lt;/</span><span class="s2">h2</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">div </span><span class="s1">class</span><span class="s3">=&quot;custom-radio-group&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">label </span><span class="s1">class</span><span class="s3">=&quot;custom-radio-container&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;</span><span class="s2">input </span><span class="s1">type</span><span class="s3">=&quot;radio&quot; </span><span class="s1">name</span><span class="s3">=&quot;candidate&quot; </span><span class="s1">value</span><span class="s3">=&quot;Candidate 1&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;</span><span class="s2">span </span><span class="s1">class</span><span class="s3">=&quot;custom-radio-checkmark&quot;</span><span class="s0">&gt;&lt;/</span><span class="s2">span</span><span class="s0">&gt;</span>
+        <span class="s0">Candidate 1</span>
+    <span class="s0">&lt;/</span><span class="s2">label</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">label </span><span class="s1">class</span><span class="s3">=&quot;custom-radio-container&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;</span><span class="s2">input </span><span class="s1">type</span><span class="s3">=&quot;radio&quot; </span><span class="s1">name</span><span class="s3">=&quot;candidate&quot; </span><span class="s1">value</span><span class="s3">=&quot;Candidate 2&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;</span><span class="s2">span </span><span class="s1">class</span><span class="s3">=&quot;custom-radio-checkmark&quot;</span><span class="s0">&gt;&lt;/</span><span class="s2">span</span><span class="s0">&gt;</span>
+        <span class="s0">Candidate 2</span>
+    <span class="s0">&lt;/</span><span class="s2">label</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">label </span><span class="s1">class</span><span class="s3">=&quot;custom-radio-container&quot;</span><span class="s0">&gt;</span>
+        <span class="s0">&lt;</span><span class="s2">input </span><span class="s1">type</span><span class="s3">=&quot;radio&quot; </span><span class="s1">name</span><span class="s3">=&quot;candidate&quot; </span><span class="s1">value</span><span class="s3">=&quot;Candidate 3&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;</span><span class="s2">span </span><span class="s1">class</span><span class="s3">=&quot;custom-radio-checkmark&quot;</span><span class="s0">&gt;&lt;/</span><span class="s2">span</span><span class="s0">&gt;</span>
+        <span class="s0">Candidate 3</span>
+    <span class="s0">&lt;/</span><span class="s2">label</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;</span><span class="s2">button </span><span class="s1">class</span><span class="s3">=&quot;Submit&quot; </span><span class="s1">id</span><span class="s3">=&quot;voteButton&quot; </span><span class="s1">disabled</span><span class="s0">&gt;Vote&lt;/</span><span class="s2">button</span><span class="s0">&gt; </span><span class="s6">&lt;!-- Button disabled initially --&gt;</span>
+<span class="s0">&lt;/</span><span class="s2">div</span><span class="s0">&gt;</span>
+
+<span class="s0">&lt;</span><span class="s2">h2</span><span class="s0">&gt;View Voting Results&lt;/</span><span class="s2">h2</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">button </span><span class="s1">id</span><span class="s3">=&quot;viewResultsBtn&quot;</span><span class="s0">&gt;View Results&lt;/</span><span class="s2">button</span><span class="s0">&gt;</span>
+<span class="s0">&lt;</span><span class="s2">div </span><span class="s1">id</span><span class="s3">=&quot;results&quot;</span><span class="s0">&gt;</span>
+    <span class="s6">&lt;!-- Voting results will be displayed here --&gt;</span>
+<span class="s0">&lt;/</span><span class="s2">div</span><span class="s0">&gt;</span>
+
+<span class="s0">&lt;</span><span class="s2">script</span><span class="s0">&gt;</span>
+    <span class="s7">let </span><span class="s0">voterName = </span><span class="s3">''</span><span class="s0">;</span>
+
+    <span class="s6">// Registration</span>
+    <span class="s0">document.getElementById(</span><span class="s3">'registrationForm'</span><span class="s0">).addEventListener(</span><span class="s3">'submit'</span><span class="s0">, </span><span class="s7">function </span><span class="s0">(e) {</span>
+        <span class="s0">e.preventDefault();</span>
+        <span class="s0">voterName = document.getElementById(</span><span class="s3">'name'</span><span class="s0">).value;</span>
+        <span class="s7">const </span><span class="s0">age = document.getElementById(</span><span class="s3">'age'</span><span class="s0">).value;</span>
+
+        <span class="s0">fetch(</span><span class="s3">'/register'</span><span class="s0">, {</span>
+            <span class="s0">method: </span><span class="s3">'POST'</span><span class="s0">,</span>
+            <span class="s0">headers: { </span><span class="s3">'Content-Type'</span><span class="s0">: </span><span class="s3">'application/json' </span><span class="s0">},</span>
+            <span class="s0">body: JSON.stringify({ name: voterName, age })</span>
+        <span class="s0">})</span>
+            <span class="s0">.then(response =&gt; response.text())</span>
+            <span class="s0">.then(message =&gt; {</span>
+                <span class="s0">alert(message);</span>
+
+                <span class="s7">if </span><span class="s0">(message === </span><span class="s3">'Registration successful!'</span><span class="s0">) {</span>
+                    <span class="s0">document.getElementById(</span><span class="s3">'voteButton'</span><span class="s0">).disabled = </span><span class="s7">false</span><span class="s0">;</span>
+                <span class="s0">}</span>
+            <span class="s0">})</span>
+            <span class="s0">.catch(err =&gt; console.error(</span><span class="s3">'Error:'</span><span class="s0">, err));</span>
+    <span class="s0">});</span>
+
+    <span class="s6">// Vote casting</span>
+    <span class="s0">document.getElementById(</span><span class="s3">'voteButton'</span><span class="s0">).addEventListener(</span><span class="s3">'click'</span><span class="s0">, () =&gt; {</span>
+        <span class="s7">const </span><span class="s0">candidate = document.querySelector(</span><span class="s3">'input[name=&quot;candidate&quot;]:checked'</span><span class="s0">).value;</span>
+
+        <span class="s7">if </span><span class="s0">(!voterName) {</span>
+            <span class="s0">alert(</span><span class="s3">&quot;Please register first.&quot;</span><span class="s0">);</span>
+            <span class="s7">return</span><span class="s0">;</span>
+        <span class="s0">}</span>
+
+        <span class="s0">fetch(</span><span class="s3">'/vote'</span><span class="s0">, {</span>
+            <span class="s0">method: </span><span class="s3">'POST'</span><span class="s0">,</span>
+            <span class="s0">headers: { </span><span class="s3">'Content-Type'</span><span class="s0">: </span><span class="s3">'application/json' </span><span class="s0">},</span>
+            <span class="s0">body: JSON.stringify({ candidate, name: voterName })</span>
+        <span class="s0">})</span>
+            <span class="s0">.then(response =&gt; response.text())</span>
+            <span class="s0">.then(message =&gt; {</span>
+                <span class="s0">alert(message);</span>
+                <span class="s0">console.log(</span><span class="s3">'Vote response:'</span><span class="s0">, message);</span>
+            <span class="s0">})</span>
+            <span class="s0">.catch(err =&gt; console.error(</span><span class="s3">'Error:'</span><span class="s0">, err));</span>
+    <span class="s0">});</span>
+
+    <span class="s6">// View results</span>
+    <span class="s0">document.getElementById(</span><span class="s3">'viewResultsBtn'</span><span class="s0">).addEventListener(</span><span class="s3">'click'</span><span class="s0">, () =&gt; {</span>
+        <span class="s0">fetch(</span><span class="s3">'/results'</span><span class="s0">)</span>
+            <span class="s0">.then(response =&gt; response.json())</span>
+            <span class="s0">.then(results =&gt; {</span>
+                <span class="s7">let </span><span class="s0">resultText = </span><span class="s3">''</span><span class="s0">;</span>
+                <span class="s7">for </span><span class="s0">(</span><span class="s7">let </span><span class="s0">candidate </span><span class="s7">in </span><span class="s0">results) {</span>
+                    <span class="s0">resultText += </span><span class="s3">`</span><span class="s0">${candidate}</span><span class="s3">: </span><span class="s0">${results[candidate]} </span><span class="s3">votes&lt;br&gt;`</span><span class="s0">;</span>
+                <span class="s0">}</span>
+                <span class="s0">document.getElementById(</span><span class="s3">'results'</span><span class="s0">).innerHTML = resultText;</span>
+            <span class="s0">})</span>
+            <span class="s0">.catch(err =&gt; console.error(</span><span class="s3">'Error fetching results:'</span><span class="s0">, err));</span>
+    <span class="s0">});</span>
+<span class="s0">&lt;/</span><span class="s2">script</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/</span><span class="s2">body</span><span class="s0">&gt;</span>
+<span class="s0">&lt;/</span><span class="s2">html</span><span class="s0">&gt;</span></pre>
+</body>
+</html>
